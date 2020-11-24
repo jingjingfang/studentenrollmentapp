@@ -12,7 +12,7 @@ Django allows you to do this by “extending base.html”
 3) Dashboard – Home/Main screen: The main screen/view after login should be a
 dashboard. The dashboard can contain information about number of enrolled students,
 average GPA, number of seniors, juniors and freshmen, number of courses offered etc.
-Try to be innovative with your dashboard designs.
+
 
 4) Student details: This screen will be an info screen that displays student information (first
 name, last name, major, year and GPA). You can use a table to display this info. Use
