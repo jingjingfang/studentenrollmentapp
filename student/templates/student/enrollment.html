@@ -1,0 +1,132 @@
+{% extends "student/base.html" %}
+{% block content %}
+ 
+
+   <div class="container">
+
+        <div class="jumbotron text-center">
+            <h1>Student Enrollment</h1>
+          
+        </div>
+      
+    </div>
+   
+   <div class="container">
+
+  	 <select id="fname">
+           {% if request.session.firstname %}
+             <option selected={{request.session.firstname}}>{{request.session.firstname}}</option>
+             {% else %}
+             <option selected="">Select Student</option>
+              {% endif %}
+                    {% for fname in student %}
+                 <option value="{{fname.firstname}}">{{fname.firstname}}</option>
+
+                    {% endfor %}
+	 </select>
+      <br/>
+      <br/>
+   </div>
+
+         <div class="container">
+              <select id="coursename">
+
+       <option selected="">Select Course</option>
+         {% if request.session.course %}
+             <option selected={{request.session.course}}>{{request.session.course}}</option>
+             {% else %}
+             <option selected="">Select Course</option>
+              {% endif %}
+                    {% for coursename in course %}
+                 <option value="{{coursename.coursetitle}}">{{coursename.coursetitle}}</option>
+
+                    {% endfor %}
+
+
+
+        </select>
+       <br/>
+        <br/>
+      <button type="button" id="ebtn" class="btn btn-primary" style="padding:5px 25px 5px">Enroll</button>
+	<br/>
+<br/>
+     </div>
+
+  <div class="container">
+
+      <table class="table">
+       <thead>
+
+           <tr>
+
+               <th> Student Name</th>
+               <th> Course Title</th>
+
+           </tr>
+     </thead>
+      
+     <tbody>
+       {% for row in enrollment %}
+       <tr>
+
+          <td>{{row.firstname}} </td>
+           <td>{{row.course}}</td>
+       </tr>
+    {% endfor %}
+     </tbody>
+     </table>
+
+  </div>
+
+
+  <script>
+      $(document).ready(function(){
+           $("#ebtn").click(function(){
+             $.ajax({
+             url: "{% url 'enrollment' %}",
+             data: {
+                fname:$("#fname").val(),
+                coursename:$("#coursename").val()
+
+              },
+        
+              success: function(data) {
+
+               if(data=='Success')  {
+                   window.location = "{% url 'enrollment' %}" 
+              } 
+               else {
+
+                    alert("Student is already registered this course.")
+           } 
+
+     }
+
+    });
+
+
+             
+  });
+
+   $("#fname").change(function(){
+      $.ajax({
+           url: "{% url 'enrollment' %}",
+           data: {
+               
+              fname:$("#fname").val()
+              },
+           
+             success: function(data){
+                 window.location = "{% url 'enrollment' %}"                     
+
+
+     }
+  });
+   
+ });
+
+});
+
+  </script>
+
+ {% endblock %}
