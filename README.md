@@ -37,7 +37,7 @@ two pages.
 
 <ul>
 <li>HTML </li>
-  <li>JavaScript</li>
+  <li>Jquery</li>
   <li>Django</li>
   <li>Python </li>
   <li>Jinja template</li>
