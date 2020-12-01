@@ -1,9 +1,11 @@
 # studentenrollmentapp
 
+<h3>Requirements:</h3>
+
 1) Login screen: The first screen/view should be a login/authentication screen.
 You should not be able to access any other screen within the app unless the user has
 authenticated himself. So all unauthenticated users should be redirected to the login
-page.
+page.</p>
 
 2) Base HTML: The base HTML should have all the navigation links. Think Navbar or
 Sidebar. This should be common for all individual HTML pages you will be developing.
@@ -22,11 +24,21 @@ students, this information would be displayed in two pages.
 5) Student Enrollment: This screen shows all the courses a particular student is enrolled in
 (Use a drop down to switch between different students). This screen should allow the
 users to enroll into courses.
-
- Each student cannot have more than 3 enrolled courses.
- User should not be able to enroll a student in the same course more than once.
+ <ul> 
+  <li>Each student cannot have more than 3 enrolled courses.</li>
+  <li> User should not be able to enroll a student in the same course more than once.</li>
+  </ul>
 
 6) Course details: This an info screen that shows all the courses available. You can use a
 table to display this information. Paginate this information so that data is displayed in
 two pages.
 
+<h3>Built With:</h3>
+
+<ul>
+<li>HTML </li>
+  <li>JavaScript</li>
+  <li>Django</li>
+  <li>Python </li>
+  <li>Jinja template</li>
+  </ul>
